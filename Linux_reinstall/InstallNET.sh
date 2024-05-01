@@ -1216,9 +1216,9 @@ function checkMem() {
 	[[ "$1" == 'debian' ]] || [[ "$1" == 'ubuntu' ]] || [[ "$1" == 'kali' ]] && {
 		[[ "$TotalMem" -le "672" ]] && lowMemMode="1"
 		if [[ "$TotalMem" -le "448" ]]; then
-			lowmemLevel=""
+			lowmemLevel="lowmem=+0"
 		elif [[ "$TotalMem" -le "1500" ]]; then
-			lowmemLevel=""
+			lowmemLevel="lowmem=+0"
 		else
 			lowmemLevel=""
 		fi
