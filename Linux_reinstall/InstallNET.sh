@@ -1214,7 +1214,7 @@ function checkMem() {
 	# so that in this situation, distributing 512mb swap for target machine is necessary to avoid of installing linux kernel will meet a fatal for Debian series.
 	# I decided to set a baseline of 672mb(any ram of current machine is lower than this) to deal with it at current(2023.11).
 	[[ "$1" == 'debian' ]] || [[ "$1" == 'ubuntu' ]] || [[ "$1" == 'kali' ]] && {
-		[[ "$TotalMem" -le "672" ]] && lowMemMode="1"
+		[[ "$TotalMem" -le "672" ]] && lowMemMode="0"
 		if [[ "$TotalMem" -le "448" ]]; then
 			lowmemLevel="lowmem=+0"
 		elif [[ "$TotalMem" -le "1500" ]]; then
