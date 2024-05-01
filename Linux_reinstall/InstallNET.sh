@@ -781,12 +781,6 @@ function setNormalRecipe() {
 		[[ "$lowMemMode" == "1" ]] && {
 			[[ -z "$swapSpace" || "$swapSpace" -lt "512" ]] && swapSpace="512"
 		}
-		if [[ -n "$swapSpace" && "$swapSpace" -gt "0" ]]; then
-			swapSpace=$(awk 'BEGIN{print '${swapSpace}'*1.05078125 }' | cut -d '.' -f '1')
-			swapRecipe=''${swapSpace}' 200 '${swapSpace}' linux-swap method{ swap } format{ } .'
-		else
-			swapRecipe=""
-		fi
 		if [[ "$6" == "xfs" ]]; then
 			fileSystem="xfs"
 		else
